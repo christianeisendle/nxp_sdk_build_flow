@@ -48,7 +48,7 @@ $(APPNAME)/$(APPNAME).dis: $(APPNAME)/$(APPNAME).axf
 
 $(APPNAME)/$(APPNAME).axf: $(OBJS)
 	@$(ARM_GCC) -Xlinker -Map=$(APPNAME)/$(APPNAME).map -T $(APPNAME)/$(APPNAME).ld $(LDFLAGS) -o $@ $^ && \
-	$(PYTHON3) $(SDK_DIR)/tools/imagetool/dk6_image_tool.py -s $(FLASH_SIZE) $@
+	$(PYTHON3) $(SDK_DIR)/tools/imagetool/dk6_image_tool.py -s $(FLASH_SIZE) $@ && rm -f data.bin
 	$(info Linking $@)
 
 %.o: %.c
