@@ -1,0 +1,9 @@
+BUILD_FLOW_DIR := build_flow
+SDK_DIR := sdk
+DEVICE := JN5189
+DEVICE_CFLAGS := -DCPU_JN5189HN -mcpu=cortex-m4 -mthumb 
+DEVICE_LDFLAGS := -mcpu=cortex-m4 -mthumb
+FLASH_SIZE := 294912
+
+include $(BUILD_FLOW_DIR)/sdk.mk
+include $(BUILD_FLOW_DIR)/build.mk
